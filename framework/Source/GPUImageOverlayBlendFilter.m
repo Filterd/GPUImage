@@ -14,6 +14,9 @@ NSString *const kGPUImageOverlayBlendFragmentShaderString = SHADER_STRING
      mediump vec4 base = texture2D(inputImageTexture, textureCoordinate);
      mediump vec4 overlay = texture2D(inputImageTexture2, textureCoordinate2);
      
+     base.rgb *= base.a;
+     overlay.rgb *= overlay.a;
+     
      mediump float ra;
      if (2.0 * base.r < base.a) {
          ra = 2.0 * overlay.r * base.r + overlay.r * (1.0 - base.a) + base.r * (1.0 - overlay.a);
@@ -51,6 +54,9 @@ NSString *const kGPUImageOverlayBlendFragmentShaderString = SHADER_STRING
  {
      vec4 base = texture2D(inputImageTexture, textureCoordinate);
      vec4 overlay = texture2D(inputImageTexture2, textureCoordinate2);
+     
+     base.rgb *= base.a;
+     overlay.rgb *= overlay.a;
      
      float ra;
      if (2.0 * base.r < base.a) {
