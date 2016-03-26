@@ -166,4 +166,5 @@
 #import "GPUImageColorConversion.h"
 #import "GPUImageColourFASTFeatureDetector.h"
 #import "GPUImageColourFASTSamplingOperation.h"
+#import "GPUImageOverlayBlendFilter.h"
 
