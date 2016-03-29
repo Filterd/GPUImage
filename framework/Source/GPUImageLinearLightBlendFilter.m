@@ -31,13 +31,13 @@ NSString *const kGPUImageLinearLightBlendFragmentShaderString = SHADER_STRING
      base.rgb *= base.a;
      overlay.rgb *= overlay.a;
 
-     highp float ra;
-     highp float ga;
-     highp float ba;
+     float ra;
+     float ga;
+     float ba;
      
-   	 ra = (base.r > 0.5) ? (overlay.r)+(2.0*(base.r-0.5)) : (base.r +(2.0*overlay.r-1.0));
-     ga = (base.g > 0.5) ? (overlay.g)+(2.0*(base.g-0.5)) : (base.g +(2.0*overlay.g-1.0));
-     ba = (base.b > 0.5) ? (overlay.b)+(2.0*(base.b-0.5)) : (base.b +(2.0*overlay.b-1.0));
+   	 ra = (overlay.r > 0.5) ? (base.r)+(2.0*(overlay.r-0.5)) : (base.r +(2.0*overlay.r-1.0));
+     ga = (overlay.g > 0.5) ? (base.g)+(2.0*(overlay.g-0.5)) : (base.g +(2.0*overlay.g-1.0));
+     ba = (overlay.b > 0.5) ? (base.b)+(2.0*(overlay.b-0.5)) : (base.b +(2.0*overlay.b-1.0));
      
      //remove the alpha HERE below before the 0.5 if funny
 /*     ra = (base.r > 0.5) ? (overlay.r * overlay.a) + (2.0 * (base.r * base.a - 0.5)) : (overlay.r * overlay.a + (2.0 * base.r * base.a - 1.0));
