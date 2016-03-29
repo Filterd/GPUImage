@@ -28,8 +28,8 @@ NSString *const kGPUImageLinearLightBlendFragmentShaderString = SHADER_STRING
      mediump vec4 base = texture2D(inputImageTexture, textureCoordinate);
      mediump vec4 overlay = texture2D(inputImageTexture2, textureCoordinate2);
      
-   //  base.rgb *= base.a;
-  //   overlay.rgb *= overlay.a;
+     base.rgb *= base.a;
+     overlay.rgb *= overlay.a;
 
      highp float ra;
      highp float ga;
