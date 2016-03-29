@@ -31,9 +31,9 @@ NSString *const kGPUImageLinearLightBlendFragmentShaderString = SHADER_STRING
      base.rgb *= base.a;
      overlay.rgb *= overlay.a;
 
-     float ra;
-     float ga;
-     float ba;
+     highp float ra;
+     highp float ga;
+     highp float ba;
      
    	 ra = (overlay.r > 0.5) ? (base.r)+(2.0*(overlay.r-0.5)) : (base.r +(2.0*overlay.r-1.0));
      ga = (overlay.g > 0.5) ? (base.g)+(2.0*(overlay.g-0.5)) : (base.g +(2.0*overlay.g-1.0));
